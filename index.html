@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" href="css/style.css?v1.2">-->
+    <style>
+        html, body{
+            height: 100%;
+        }
+        body{
+            /*transform-style: preserve-3d;*/
+            perspective: 500;
+            -webkit-perspective: 500;
+        }
+        .box{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            /*transform-origin: center;*/
+            transform-style: preserve-3d;
+            transform: rotate3d(20, 30, 40, 30deg);
+        }
+        .box span{
+            position: absolute;
+            display: block;
+            width: 300px;
+            height: 300px;
+            top: 0;
+            left: 0;
+        }
+        .box span:nth-child(1){
+            transform: rotateX(90deg) translate3d(0, 0, -150px);
+            background: red;
+        }
+        .box span:nth-child(2){
+            transform: rotateX(90deg) translate3d(0, 0, 150px);
+            background: green;
+        }
+        .box span:nth-child(3){
+            transform: rotateY(90deg) translate3d(0, 0, -150px);
+            background: blue;
+        }
+        .box span:nth-child(4){
+            transform: rotateY(90deg) translate3d(0, 0, 150px);
+            background: black;
+        }
+        .box span:nth-child(5){
+            transform: translate3d(0, 0, -150px);
+            background: yellow;
+        }
+        .box span:nth-child(6){
+            transform: translate3d(0, 0, 150px);
+            background: darkslategray;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <script>
+        var arr = [2,3,4,5,1,23,0,6,9,8,7];
+        var i =new Date().getTime();
+        // console.log(i)
+        // 冒泡
+        /*for(var x = 0; x < arr.length; x++){
+            for(var j = 0; j < x; j++){
+                // console.log(x, j, arr);
+                if(arr[x] <= arr[j]){
+
+                    var c = arr[x];
+                    arr[x] = arr[j];
+                    arr[j] = c;
+                }
+            }
+        }*/
+
+
+        // 快排
+        /*var paixu = function(arr){
+            if(arr.length <= 1) return arr;
+            var middleIndex = parseInt(arr.length / 2);
+            var middleValue = arr.splice(middleIndex, 1);
+            // var middleValue = arr[middleIndex];
+            var left = [],
+                right = [];
+            for(var i = 0; i < arr.length; i++){
+                console.log(arr)
+                if(arr[i] < middleValue){
+                    left.push(arr[i]);
+                } else if(arr[i] > middleValue) {
+                    right.push(arr[i]);
+                }
+            }
+            // return paixu(left).concat([middleValue], paixu(right));
+            return [...paixu(left), ...middleValue, ...paixu(right)]
+        };
+        var newArr = paixu(arr);
+        console.log(newArr);*/
+
+        // 数据排序
+        /*arr.sort(function (a, b) {
+            return a - b;
+        })*/
+
+        // 插入法
+        /*for (var x = 1; x < arr.length; x++) {
+            var key = arr[x];
+           /!* var j = x - 1;
+            while (j >= 0 && arr[j] > key) {
+                arr[j+1] = arr[j];
+                j--;
+            }*!/
+            // if(arr[x-1] > key) {
+                for (var j = x - 1; j >= 0, arr[j] > key; j--) {
+                    console.log(arr);
+                    // arr[j] = arr[j + 1];
+                    arr[j+1] = arr[j];
+                }
+            arr[j+1] = key;
+            // }
+
+            // arr[j+1] = key;
+        }*/
+
+        // console.log(arr)
+
+        console.log(new Date().getTime() - i)
+
+    </script>
+</body>
+</html>
